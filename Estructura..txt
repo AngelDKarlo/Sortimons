@@ -1,0 +1,105 @@
+Estructura de Carpetas y Archivos (Propuesta Full-Stack)
+
+Esta estructura asume un frontend moderno (como React, Angular o Vue) y un backend (como Node.js/Express) o servicios en la nube (Firebase).
+
+/sortimons-project
+│
+├── 📁 cliente-web/             # Frontend (React/Angular/Vue)
+│   │
+│   ├── 📁 public/
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   └── 🖼️ assets/           # Imágenes del mapa, sprites, iconos
+│   │       ├── map-tileset.png
+│   │       ├── player-sprite.png
+│   │       └── jaguar-avatar.png
+│   │
+│   ├── 📁 src/
+│   │   │
+│   │   ├── 📁 components/     # Componentes Reutilizables
+│   │   │   ├── 📁 ui/             # Botones, Modales, Loaders
+│   │   │   │   ├── Button.jsx
+│   │   │   │   └── Modal.jsx
+│   │   │   │
+│   │   │   ├── 📁 layout/         # Header, Footer, Sidebar
+│   │   │   │
+│   │   │   ├── 📁 world/          # Componentes del Mapa
+│   │   │   │   ├── GameMap.jsx     # Renderiza el mapa
+│   │   │   │   ├── Player.jsx      # Avatar del jugador
+│   │   │   │   └── OtherPlayer.jsx # Avatares de otros usuarios
+│   │   │   │
+│   │   │   ├── 📁 gym/            # Componentes del Gimnasio
+│   │   │   │   ├── SortVisualizer.jsx  # Animación de ordenamiento
+│   │   │   │   ├── CodeDebugger.jsx    # Vista de código y resaltado
+│   │   │   │   └── GymControls.jsx   # Botones (Play, Pausa, Velocidad)
+│   │   │   │
+│   │   │   ├── 📁 ai/             # Asistente Jaguar
+│   │   │   │   └── JaguarChat.jsx
+│   │   │   │
+│   │   │   ├── 📁 social/
+│   │   │   │   ├── GlobalChat.jsx
+│   │   │   │   └── WellnessChat.jsx  # Chat "Psicólogo"
+│   │   │   │
+│   │   │   └── 📁 monetization/
+│   │   │       ├── BettingPanel.jsx
+│   │   │       └── ProUpsell.jsx
+│   │   │
+│   │   ├── 📁 pages/          # Vistas principales de la app
+│   │   │   ├── HomePage.jsx    # Carga el GameMap
+│   │   │   ├── GymPage.jsx     # Carga la interfaz del gimnasio
+│   │   │   ├── LoginPage.jsx
+│   │   │   └── ProfilePage.jsx
+│   │   │
+│   │   ├── 📁 core/           # Lógica central de ordenamiento
+│   │   │   ├── 📁 algorithms/
+│   │   │   │   ├── bubbleSort.js     # Lógica que *genera* pasos (yield)
+│   │   │   │   ├── insertionSort.js
+│   │   │   │   ├── quickSort.js
+│   │   │   │   └── mergeSort.js
+│   │   │   │
+│   │   │   └── 📁 code-snippets/    # Strings de código para el debugger
+│   │   │       ├── javascript.js   # export const BUBBLE_SORT = "..."
+│   │   │       ├── python.js
+│   │   │       └── cpp.js
+│   │   │
+│   │   ├── 📁 services/       # Conexiones externas
+│   │   │   ├── firebase.js     # Configuración de Firebase (Auth, Firestore)
+│   │   │   ├── gemini.js       # API para el Jaguar (Gemini API)
+│   │   │   └── api.js          # Conexión al backend (si no es Firebase)
+│   │   │
+│   │   ├── 📁 contexts/       # Estado Global (React Context)
+│   │   │   ├── AuthContext.jsx
+│   │   │   └── PlayerContext.jsx # Para estado del jugador, posición
+│   │   │
+│   │   ├── App.jsx           # Router principal
+│   │   ├── main.jsx          # Punto de entrada
+│   │   └── styles.css
+│   │
+│   └── package.json
+│
+├── 📁 servidor/               # Backend (Node.js/Express) o Firebase Functions
+│   │
+│   ├── 📁 functions/          # (Si se usa Firebase Functions)
+│   │   ├── 📁 api/
+│   │   │   ├── auth.js         # Manejo de usuarios
+│   │   │   ├── payment.js      # Para la Versión Pro (Stripe)
+│   │   │   └── web3.js         # Lógica de minting de NFTs
+│   │   │
+│   │   ├── 📁 realtime/
+│   │   │   └── playerMovement.js # Función para actualizar posiciones
+│   │   │
+│   │   └── index.js
+│   │
+│   ├── 📁 models/             # (Si se usa backend propio con MongoDB/SQL)
+│   │   ├── User.js
+│   │   └── Nft.js
+│   │
+│   ├── 📁 routes/
+│   │   └── ...
+│   │
+│   ├── server.js             # (Si se usa backend propio)
+│   └── package.json
+│
+├── 📜 .gitignore
+├── 📜 README.md               # El archivo de arriba
+└── 📜 ESTRUCTURA_PROYECTO.md   # Este mismo archivo
